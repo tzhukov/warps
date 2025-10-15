@@ -18,8 +18,8 @@ BEGIN {
         
         # Check if it's a completed Mars mission
         if (tolower($3) == "mars" && tolower($4) == "completed") {
-            # Extract duration (field 6)
-            duration = $6
+            # Extract duration (field 6) and convert to number
+            duration = $6 + 0
             
             # Check if duration is a valid number and is the longest so far
             if (duration ~ /^[0-9]+$/ && duration > max_duration) {
